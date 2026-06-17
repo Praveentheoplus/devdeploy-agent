@@ -36,7 +36,7 @@ export default function App() {
     setLoading(true);
     addLog("log", "🤖 DevDeploy Agent starting...");
     try {
-      const response = await fetch("http://localhost:5000/api/deploy", {
+      const response = await fetch("https://devdeploy-backend.onrender.com/api/deploy", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ repoUrl, vercelToken, envVars: parseEnvVars(envInput) }),
